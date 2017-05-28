@@ -6,11 +6,9 @@ public class ChangeScene : MonoBehaviour
 {
 
     //Ładowanie wybranej sceny
-    public void ChangeSceneTo(int ChangeScene)
+    public void ChangeSceneTo(int changeScene)
     {
-
-        SceneManager.LoadScene(ChangeScene);
-
+        SceneManager.LoadScene(changeScene);
     }
 
 

@@ -7,13 +7,13 @@ namespace Assets.Classes
 {
     class Player
     {
-        private String login;
+        public String username;
         public int ageGroup;
-        private string password;
+        public string password;
 
         public Player(String login)
         {
-            this.login = login;
+            this.username = login;
         }
 
         public void setPassword(string password)
