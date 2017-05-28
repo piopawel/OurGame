@@ -12,11 +12,10 @@ public class getUsernames : MonoBehaviour {
 		addUsernames();
 	}
 	
-	// Update is called once per frame
 	private void addUsernames()
     {
         DatabaseConnector dbConnector = new DatabaseConnector();
-        List<string> usernames = dbConnector.connect();
+        List<string> usernames = dbConnector.getUsernames();
         //List<string> usernames = new List<string> { "Pio", "Marta", "InnaOsoba" };
         dropdown.AddOptions(usernames);
     }
