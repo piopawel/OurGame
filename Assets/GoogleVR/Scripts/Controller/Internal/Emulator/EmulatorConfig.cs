@@ -43,6 +43,10 @@ namespace Gvr.Internal {
       WIFI,
     }
 
+    void Awake () {
+      DontDestroyOnLoad(transform.gameObject);
+    }
+
     // Set this value to match how the PC is connected to the phone that is
     // streaming gyro, accel, and touch events. Set to OFF if using Wifi instead.
     public Mode PHONE_EVENT_MODE = Mode.USB;
