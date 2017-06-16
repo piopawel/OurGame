@@ -16,11 +16,11 @@ namespace Assets.Classes.Games
 
         private Colors usedColor;
 
-        public DeceptiveArrow(Player player, int gameMode)
+        public DeceptiveArrow()//Player player, int gameMode)
         {
             random = new Random();
-            this.player = player;
-            this.gameMode = gameMode;
+            //this.player = player;
+            //this.gameMode = gameMode;
         }
         /*
          *  This method creates an Arrow object. 
@@ -31,7 +31,7 @@ namespace Assets.Classes.Games
          *  
          *  The size of an arrow is big. If a small arrow is generated, then the size is small.
          */
-        private Arrow generateArrow()
+        public Arrow generateArrow()
         {
             Colors color;
             Directions direction;

@@ -7,13 +7,10 @@ namespace Assets.Classes.Games
 {
     class Arrow
     {
-        Colors color;
-        Directions direction;
-        Sizes size;
-        public Arrow()
-        {
+        public Colors color;
+        public Directions direction;
+        public Sizes size;
 
-        }
         public Arrow(Colors color, Directions direction, Sizes size)
         {
             this.color = color;
