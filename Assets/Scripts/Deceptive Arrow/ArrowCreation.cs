@@ -31,7 +31,7 @@ public class ArrowCreation : MonoBehaviour {
         GameObject arrow = Instantiate(chosenPrefab, new Vector3(0, 1.5f, 1), direction);
 
         if(generatedArrow.size == Sizes.small)
-            arrow.transform.localScale = new Vector3(0.05f, 0.5f, 1);
+            arrow.transform.localScale = new Vector3(0.05f, 0.05f, 1);
     }
 	
 	// Update is called once per frame
