@@ -11,6 +11,7 @@ public class arrowClick : MonoBehaviour  {
     Vector2 pointerUpPosition;
     public GameObject wroc;
     public GameObject triggerButton;
+    Camera camera;
 
     // Use this for initialization
     void Start () {
@@ -26,22 +27,41 @@ public class arrowClick : MonoBehaviour  {
         entryUp.eventID = EventTriggerType.PointerUp;
         entryUp.callback.AddListener((data) => { OnPointerUpDelegate((PointerEventData)data); });
         trigger.triggers.Add(entryUp);
+
+        camera = GetComponent<Camera>();
     }
 
-    public void OnPointerUpDelegate(PointerEventData data)
+    public void OnPointerUpDelegate(PointerEventData ped)
     {
-        pointerUpPosition = data.position;
+
+        Vector2 localCursor;
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RectTransform>(), ped.position, ped.pressEventCamera, out localCursor))
+            return;
+        //pointerUpPosition = data.position.normalized;
         Debug.Log("OnPointerDownDelegate called.");
         //wroc.GetComponentInChildren<Text>().text = "lala";
-        wroc.GetComponentInChildren<Text>().text = pointerUpPosition.x.ToString();
+        //wroc.GetComponentInChildren<Text>().text = pointerUpPosition.x.ToString();
+        wroc.GetComponentInChildren<Text>().text = localCursor.x.ToString() + " aaa \n" + localCursor.y.ToString();
     }
     
-    public void OnPointerDownDelegate(PointerEventData data)
+    public void OnPointerDownDelegate(PointerEventData ped)
     {
+        /*
+        Vector3 position = Input.mousePosition;
         //wroc.GetComponentInChildren<Text>().text = "iksde";
-        wroc.GetComponentInChildren<Text>().text = pointerDownPosition.x.ToString();
-        pointerDownPosition = data.position;
+        pointerDownPosition = data.position.normalized;
+        //wroc.GetComponentInChildren<Text>().text = pointerDownPosition.x.ToString();
+        wroc.GetComponentInChildren<Text>().text = position.x.ToString();
         Debug.Log("OnPointerDownDelegate called.");
+        */
+        Vector2 localCursor;
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RectTransform>(), ped.position, ped.pressEventCamera, out localCursor))
+            return;
+        //pointerUpPosition = data.position.normalized;
+        Debug.Log("OnPointerDownDelegate called.");
+        //wroc.GetComponentInChildren<Text>().text = "lala";
+        //wroc.GetComponentInChildren<Text>().text = pointerUpPosition.x.ToString();
+        wroc.GetComponentInChildren<Text>().text = localCursor.x.ToString() + " aaa \n" +localCursor.y.ToString();
     }
 
     // Update is called once per frame
