@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Classes.Games;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ArrowCreation : MonoBehaviour {
     public GameObject blueArrowPrefab;
     public GameObject redArrowPrefab;
+
+    public GameObject wroc;
     // Use this for initialization
     void Start () {
         DeceptiveArrow deceptiveArrow = new DeceptiveArrow();
@@ -32,10 +36,11 @@ public class ArrowCreation : MonoBehaviour {
 
         if(generatedArrow.size == Sizes.small)
             arrow.transform.localScale = new Vector3(0.05f, 0.05f, 1);
+        
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

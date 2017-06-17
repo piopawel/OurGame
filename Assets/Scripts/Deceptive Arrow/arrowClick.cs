@@ -10,10 +10,11 @@ public class arrowClick : MonoBehaviour  {
     Vector2 pointerDownPosition;
     Vector2 pointerUpPosition;
     public GameObject wroc;
-    public GameObject arrow;
+    public GameObject triggerButton;
+
     // Use this for initialization
     void Start () {
-        EventTrigger trigger = wroc.gameObject.AddComponent<EventTrigger>();
+        EventTrigger trigger = triggerButton.gameObject.AddComponent<EventTrigger>();
         //EventTrigger trigger = GetComponent<EventTrigger>();
 
         EventTrigger.Entry entryDown = new EventTrigger.Entry();
@@ -31,18 +32,14 @@ public class arrowClick : MonoBehaviour  {
     {
         pointerUpPosition = data.position;
         Debug.Log("OnPointerDownDelegate called.");
-        wroc.GetComponentInChildren<Text>().text = "lala";
+        //wroc.GetComponentInChildren<Text>().text = "lala";
+        wroc.GetComponentInChildren<Text>().text = pointerUpPosition.x.ToString();
     }
-    public void OnPointerUpDelegate()
-    {
-        //pointerUpPosition = data.position;
-        Debug.Log("OnPointerDownDelegate called.");
-        wroc.GetComponentInChildren<Text>().text = "lala";
-    }
-
+    
     public void OnPointerDownDelegate(PointerEventData data)
     {
-        wroc.GetComponentInChildren<Text>().text = "lala";
+        //wroc.GetComponentInChildren<Text>().text = "iksde";
+        wroc.GetComponentInChildren<Text>().text = pointerDownPosition.x.ToString();
         pointerDownPosition = data.position;
         Debug.Log("OnPointerDownDelegate called.");
     }
