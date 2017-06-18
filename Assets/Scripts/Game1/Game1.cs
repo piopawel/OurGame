@@ -42,6 +42,7 @@ public class Game1 : MonoBehaviour
                 if (answer == variableA + variableB)
                 {
                     Debug.Log(answer + " == " + variableA + " + " + variableB);
+                    Equations.points += 1;
                     nextQuestion(10);
                 };
                 break;
@@ -50,6 +51,7 @@ public class Game1 : MonoBehaviour
                 if (answer == variableA - variableB)
                 {
                     Debug.Log(answer + " == " + variableA + " - " + variableB);
+                    Equations.points += 1;
                     nextQuestion(10);
                 };
                 break;
@@ -58,6 +60,7 @@ public class Game1 : MonoBehaviour
                 if (answer == variableA / variableB)
                 {
                     Debug.Log(answer + " == " + variableA + " / " + variableB);
+                    Equations.points += 1;
                     nextQuestion(10);
                 };
                 break;
@@ -67,6 +70,7 @@ public class Game1 : MonoBehaviour
                 if (answer == variableA * variableB)
                 {
                     Debug.Log(answer + " == " + variableA + " * " + variableB);
+                    Equations.points += 1;
                     nextQuestion(10);
                 };
                 break;
@@ -83,7 +87,6 @@ public class Game1 : MonoBehaviour
     public void nextQuestion(int level)
     {
         // Rzecz do ustawienia - wg poziomu dać różne punkty (0.9, 1, 1.1)
-        Equations.points += 1;
         variableA = UnityEngine.Random.Range(0, level);
         Debug.Log("variableA " + variableA);
         sign = signs[UnityEngine.Random.Range(0, 4)];

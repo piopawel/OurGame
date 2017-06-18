@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 967086606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3559f50fbd0ca644bac5ab5b9759674c, type: 3}
+  m_Script: {fileID: 11500000, guid: a6061adb08fa5f0449e179462d88d3c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointLabel: {fileID: 967086606}
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 1035630350}
   m_Layer: 0
   m_Name: timeBoard
-  m_TagString: Untagged
+  m_TagString: Equations
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

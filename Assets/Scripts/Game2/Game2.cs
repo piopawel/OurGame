@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Classes.Games;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -121,6 +122,7 @@ public class Game2 : MonoBehaviour
         if (pairs.Count == 0)
         {
             Debug.Log("para");
+            MatchIt.points += 1;
             displaySings();
         }
     }

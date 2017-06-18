@@ -5,11 +5,10 @@ using System.Text;
 
 namespace Assets.Classes.Games
 {
-    class Game
+    class MatchIt
     {
-        public Player player;
-        public double points;
-        public int gameMode;
-
+        public static string player = "PIO";
+        public static float points;
+        public static int gameMode;
     }
 }
