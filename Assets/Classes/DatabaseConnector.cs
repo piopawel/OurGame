@@ -77,6 +77,25 @@ namespace Assets.Classes
             queryClose(dbconn, dbcmd);
         }
 
+        public List<string> loadScores(string username, String game)
+        {
+            IDbConnection dbconn = (IDbConnection)new SqliteConnection(conn);
+            dbconn.Open();
+            List<string> scores = new List<string> { };
+
+            IDbCommand dbcmd = dbconn.CreateCommand();
+            string sqlQuery = "SELECT score FROM Scores WHERE player = '" + username + "' AND game = '" + game + "' ORDER BY score desc";
+            dbcmd.CommandText = sqlQuery;
+            IDataReader reader = dbcmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string score = reader.GetString(0);
+                scores.Add(score);
+            }
+            queryClose(dbconn, reader, dbcmd);
+            return scores;
+        }
+
         private void queryClose(IDbConnection dbconn, IDataReader reader, IDbCommand dbcmd)
         {
             reader.Close();
