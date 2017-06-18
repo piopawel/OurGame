@@ -8,7 +8,7 @@ namespace Assets.Classes.Games
     class DeceptiveArrow 
     {
         private static Random random;
-        public static Player player;
+        public static string player = "PIO";
         public static float points;
         public static int gameMode;
         public static List<Arrow> arrows = new List<Arrow>();
@@ -31,35 +31,35 @@ namespace Assets.Classes.Games
          *  
          *  The size of an arrow is big. If a small arrow is generated, then the size is small.
          */
-        public Arrow generateArrow()
-        {
-            Colors color;
-            Directions direction;
-            Sizes size;
+        //public Arrow generateArrow()
+        //{
+        //    Colors color;
+        //    Directions direction;
+        //    Sizes size;
 
-            if (gameMode == 1)
-                direction = (Directions)random.Next(0, 2);
-            else
-                direction = (Directions)random.Next(0, 4);
+        //    if (gameMode == 1)
+        //        direction = (Directions)random.Next(0, 2);
+        //    else
+        //        direction = (Directions)random.Next(0, 4);
 
-            if (arrows.Count == 0)
-            {
-                size = Sizes.big;
-                //color = usedColor = (Colors)random.Next(0, 2);
-                color = (Colors)random.Next(0, 2);
-            }
-            else {
-                size = Sizes.small;
-                if (arrows[0].color == Colors.red)
-                    color = Colors.blue;
-                else
-                    color = Colors.red;
-            }
+        //    if (arrows.Count == 0)
+        //    {
+        //        size = Sizes.big;
+        //        //color = usedColor = (Colors)random.Next(0, 2);
+        //        color = (Colors)random.Next(0, 2);
+        //    }
+        //    else {
+        //        size = Sizes.small;
+        //        if (arrows[0].color == Colors.red)
+        //            color = Colors.blue;
+        //        else
+        //            color = Colors.red;
+        //    }
 
-            Arrow arrow = new Arrow(color, direction, size);
-            arrows.Add(arrow);
-            return arrow;
-        }
+        //    Arrow arrow = new Arrow(color, direction, size);
+        //    arrows.Add(arrow);
+        //    return arrow;
+        //}
         public static void resetArrows()
         {
             arrows.Clear();

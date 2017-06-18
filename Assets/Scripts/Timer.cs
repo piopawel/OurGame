@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Assets.Classes;
+using Assets.Classes.Games;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +25,8 @@ public class Timer : MonoBehaviour
             timeLabel.GetComponentInChildren<TextMesh>().text = "Czas:" + String.Format("{0:0.0}", timeLeft);
             if (timeLeft < 0)
             {
+                DatabaseConnector dbconn = new DatabaseConnector();
+                dbconn.saveScore(DeceptiveArrow.player ,DeceptiveArrow.points, "DeceptiveArrow");
                 ChangeScene changeScene = new ChangeScene();
                 changeScene.ChangeSceneTo(2);
             }

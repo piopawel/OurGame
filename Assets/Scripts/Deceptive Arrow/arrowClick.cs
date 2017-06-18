@@ -41,10 +41,18 @@ public class arrowClick : MonoBehaviour  {
             return;
         float diffX = pointerUpPosition.x - pointerDownPosition.x;
         float diffY = pointerUpPosition.y - pointerDownPosition.y;
-        wroc.GetComponentInChildren<Text>().text = diffX.ToString() + "\n" + diffY.ToString();
+        //wroc.GetComponentInChildren<Text>().text = diffX.ToString() + "\n" + diffY.ToString();
         if (moveIsCorrect(diffX, diffY))
         {
-            DeceptiveArrow.points += 1;
+            float bonus;
+            if (DeceptiveArrow.gameMode == 1)
+                bonus = 0.9f;
+            else if (DeceptiveArrow.gameMode == 3)
+                bonus = 1.1f;
+            else
+                bonus = 1;
+
+            DeceptiveArrow.points += bonus;
             GameObject[] arrows = GameObject.FindGameObjectsWithTag("arrow");
             foreach(GameObject arrow in arrows)
             {

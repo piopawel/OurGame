@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1350
     height: 619
-  m_MinSize: {x: 913, y: 471}
-  m_MaxSize: {x: 22008, y: 14021}
+  m_MinSize: {x: 917, y: 492}
+  m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
-  controlID: 31172
+  controlID: 35011
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,10 +122,10 @@ MonoBehaviour:
     y: 0
     width: 324
     height: 619
-  m_MinSize: {x: 202, y: 321}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 342}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 31516
+  controlID: 34989
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 308
     width: 324
     height: 311
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 7}
@@ -345,10 +345,10 @@ MonoBehaviour:
     y: 0
     width: 380
     height: 619
-  m_MinSize: {x: 204, y: 421}
-  m_MaxSize: {x: 4004, y: 8021}
+  m_MinSize: {x: 204, y: 442}
+  m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 31173
+  controlID: 34966
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -466,8 +466,8 @@ MonoBehaviour:
     y: 308
     width: 380
     height: 311
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -567,10 +567,10 @@ MonoBehaviour:
     y: 0
     width: 369
     height: 619
-  m_MinSize: {x: 230, y: 471}
-  m_MaxSize: {x: 10000, y: 14021}
+  m_MinSize: {x: 234, y: 492}
+  m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 31383
+  controlID: 35012
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -623,10 +623,10 @@ MonoBehaviour:
     width: 365
     height: 323
   m_TreeViewState:
-    scrollPos: {x: 0, y: 110}
-    m_SelectedIDs: 2048feff
-    m_LastClickedID: -112608
-    m_ExpandedIDs: 2048feff72e3feffdae4feffeae4feff1ce5feff1ee5feff2ae5fefface7feff3af9feff6c01ffffd210ffff8c12ffffbe15ffff6a2dffff222fffff7431ffff4634ffff5441ffffb050ffff2057ffff2857ffff3657ffff8c69ffffd87bffffe87bffff1a7cffff1c7cffff287cffffe2fbffff000000000257000014570000225700003a5700009e660000a2660000cc670000de6700008c6a0000f66a00008470000092700000a87000006276000082760000
+    scrollPos: {x: 0, y: 126}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 2048feff72e3feffdae4feffeae4feff1ce5feff1ee5feff2ae5fefface7feff3af9feff6c01ffffd210ffff8c12ffffbe15ffff6a2dffff222fffff7431ffff4634ffff5441ffffb050ffff2057ffff2857ffff3657ffff8c69ffffd87bffffe87bffff1a7cffff1c7cffff287cffffe2fbffff000000000257000014570000225700003a5700009e660000a2660000cc670000de6700008c6a0000f66a00008470000092700000a8700000627600007476000082760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -667,8 +667,8 @@ MonoBehaviour:
     y: 344
     width: 369
     height: 275
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 234, y: 271}
+  m_MaxSize: {x: 10004, y: 10021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -711,18 +711,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Deceptive Arrow
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 45
   m_LastFolders:
-  - Assets/Scripts/Deceptive Arrow
+  - Assets/Scripts
   m_LastFoldersGridSize: 45
   m_LastProjectPath: D:\Studia\Semestr 8\MSI\Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 103}
-    m_SelectedIDs: d0260000
-    m_LastClickedID: 9936
+    m_SelectedIDs: 02280000
+    m_LastClickedID: 10242
     m_ExpandedIDs: 000000000c26000054260000e62600002c2700003e270000722700000228000022280000622800007228000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -776,8 +776,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2048feff
-    m_LastClickedInstanceID: -112608
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000
     m_RenameOverlay:
@@ -857,7 +857,7 @@ MonoBehaviour:
     y: 100
     width: 275
     height: 598
-  m_ScrollPosition: {x: 0, y: 305.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -100
