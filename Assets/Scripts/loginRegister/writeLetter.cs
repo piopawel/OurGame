@@ -34,7 +34,9 @@ public class writeLetter : MonoBehaviour {
             if(letter == "Erase")
             {
                 int count = inputFieldText.Length;
-                string erasedText = inputFieldText.Remove(count - 1, 1);
+                string erasedText="";
+                if (count > 0)
+                    erasedText = inputFieldText.Remove(count - 1, 1);
                 inputField.GetComponentInChildren<Text>().text = erasedText;
             } else
             {

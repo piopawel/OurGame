@@ -14,7 +14,9 @@ public class Timer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        DeceptiveArrow.points = 0;
+        Equations.points = 0;
+        MatchIt.points = 0;
     }
 
     // Update is called once per frame
