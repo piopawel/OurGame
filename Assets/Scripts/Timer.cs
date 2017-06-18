@@ -21,12 +21,19 @@ public class Timer : MonoBehaviour
     void Update()
     {
         {
+            string game = timeLabel.tag;
             timeLeft -= Time.deltaTime;
             timeLabel.GetComponentInChildren<TextMesh>().text = "Czas:" + String.Format("{0:0.0}", timeLeft);
             if (timeLeft < 0)
             {
                 DatabaseConnector dbconn = new DatabaseConnector();
-                dbconn.saveScore(DeceptiveArrow.player ,DeceptiveArrow.points, "DeceptiveArrow");
+                if(game == "DeceptiveArrow")
+                    dbconn.saveScore(DeceptiveArrow.player ,DeceptiveArrow.points, game);
+                else if (game == "Equations")
+                    dbconn.saveScore(Equations.player, Equations.points, game);
+                else if (game == "MatchIt")
+                    dbconn.saveScore(MatchIt.player, MatchIt.points, game);
+
                 ChangeScene changeScene = new ChangeScene();
                 changeScene.ChangeSceneTo(2);
             }
