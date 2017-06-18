@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Classes.Games
 {
-    class Arrow
+    public class Arrow
     {
         public Colors color;
         public Directions direction;

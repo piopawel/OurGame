@@ -8,13 +8,14 @@ namespace Assets.Classes.Games
     class DeceptiveArrow 
     {
         private static Random random;
-        private static bool alreadyAnArrow = false;
-        private Player player;
-        private double points;
-        private int gameMode;
+        //private static bool alreadyAnArrow = false;
+        public static Player player;
+        //private double points;
+        public static int gameMode;
+        public static List<Arrow> arrows = new List<Arrow>();
         //time?
 
-        private Colors usedColor;
+        //private Colors usedColor;
 
         public DeceptiveArrow()//Player player, int gameMode)
         {
@@ -37,31 +38,32 @@ namespace Assets.Classes.Games
             Directions direction;
             Sizes size;
 
-            if (this.gameMode == 1)
+            if (gameMode == 1)
                 direction = (Directions)random.Next(0, 2);
             else
                 direction = (Directions)random.Next(0, 4);
 
-            if (!alreadyAnArrow)
+            if (arrows.Count == 0)
             {
                 size = Sizes.big;
-                color = usedColor = (Colors)random.Next(0, 2);
+                //color = usedColor = (Colors)random.Next(0, 2);
+                color = (Colors)random.Next(0, 2);
             }
             else {
                 size = Sizes.small;
-                if (usedColor == Colors.red)
+                if (arrows[0].color == Colors.red)
                     color = Colors.blue;
                 else
                     color = Colors.red;
             }
 
             Arrow arrow = new Arrow(color, direction, size);
-            alreadyAnArrow = true;
+            arrows.Add(arrow);
             return arrow;
         }
-        private static void resetArrows()
+        public static void resetArrows()
         {
-           alreadyAnArrow = false;
+            arrows.Clear();
         }
     }
 }
