@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Classes\DatabaseConnector.cs" />
+     <Compile Include="Assets\Classes\Games\Deceptive Arrow\Arrow.cs" />
+     <Compile Include="Assets\Classes\Games\Deceptive Arrow\DeceptiveArrow.cs" />
+     <Compile Include="Assets\Classes\Games\Equations\Equasions.cs" />
+     <Compile Include="Assets\Classes\Games\Equations\Equation.cs" />
+     <Compile Include="Assets\Classes\Games\Game.cs" />
+     <Compile Include="Assets\Classes\Games\PlayerEmotion.cs" />
      <Compile Include="Assets\Classes\Player.cs" />
-     <Compile Include="Assets\Classes\PlayerEmotion.cs" />
      <Compile Include="Assets\Classes\Scores.cs" />
      <Compile Include="Assets\GoogleVR\DemoScenes\ControllerDemo\ControllerDebugInfo.cs" />
      <Compile Include="Assets\GoogleVR\DemoScenes\ControllerDemo\ControllerDemoManager.cs" />
@@ -164,7 +169,11 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\Scripts\Deceptive Arrow\ArrowCreation.cs" />
+     <Compile Include="Assets\Scripts\Deceptive Arrow\arrowClick.cs" />
+     <Compile Include="Assets\Scripts\Deceptive Arrow\pointerListener.cs" />
      <Compile Include="Assets\Scripts\Game1.cs" />
+     <Compile Include="Assets\Scripts\Game2.cs" />
      <Compile Include="Assets\Scripts\loginRegister\getUsernames.cs" />
      <Compile Include="Assets\Scripts\loginRegister\logIntoAccount.cs" />
      <Compile Include="Assets\Scripts\loginRegister\registerButtonService.cs" />

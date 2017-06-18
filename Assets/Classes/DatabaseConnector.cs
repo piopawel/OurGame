@@ -5,6 +5,7 @@ using System.Text;
 using Mono.Data.SqliteClient;
 using System.Data;
 using System.IO;
+using Assets.Classes;
 
 namespace Assets.Classes
 {
@@ -64,6 +65,18 @@ namespace Assets.Classes
             dbcmd.ExecuteNonQuery();
             queryClose(dbconn, dbcmd);
         }
+
+        public void saveScore(string player, float points, String game)
+        {
+            IDbConnection dbconn = (IDbConnection)new SqliteConnection(conn);
+            dbconn.Open();
+            IDbCommand dbcmd = dbconn.CreateCommand();
+            string sqlQuery = "INSERT INTO Scores VALUES ('" + player + "\',\'" + DateTime.Now.ToString() + "\',\'" + points + "\',\'" + game + "');";
+            dbcmd.CommandText = sqlQuery;
+            dbcmd.ExecuteNonQuery();
+            queryClose(dbconn, dbcmd);
+        }
+
         private void queryClose(IDbConnection dbconn, IDataReader reader, IDbCommand dbcmd)
         {
             reader.Close();

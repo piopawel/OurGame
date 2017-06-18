@@ -7,16 +7,16 @@ namespace Assets.Classes
 {
     class Score
     {
-        private Player player;
-        private double normalizedPoints;
-        private double points;
-        private int gameMode;
+        public Player player;
+        public double normalizedPoints;
+        public double points;
+        //private int gameMode;
 
-        private double normalizePoints()
-        {
-            double normalizedPoints;
-            normalizedPoints = points * (8 - player.ageGroup) * gameMode;
-            return normalizedPoints;
-        }
+        //private double normalizePoints()
+        //{
+        //    double normalizedPoints;
+        //    normalizedPoints = points * (8 - player.ageGroup);
+        //    return normalizedPoints;
+        //}
     }
 }

@@ -8,13 +8,13 @@ namespace Assets.Classes.Games
     class DeceptiveArrow 
     {
         private static Random random;
-        private static bool alreadyAnArrow = false;
-        private Player player;
-        private double points;
-        private int gameMode;
+        public static string player = "PIO";
+        public static float points;
+        public static int gameMode;
+        public static List<Arrow> arrows = new List<Arrow>();
         //time?
 
-        private Colors usedColor;
+        //private Colors usedColor;
 
         public DeceptiveArrow()//Player player, int gameMode)
         {
@@ -31,37 +31,38 @@ namespace Assets.Classes.Games
          *  
          *  The size of an arrow is big. If a small arrow is generated, then the size is small.
          */
-        public Arrow generateArrow()
+        //public Arrow generateArrow()
+        //{
+        //    Colors color;
+        //    Directions direction;
+        //    Sizes size;
+
+        //    if (gameMode == 1)
+        //        direction = (Directions)random.Next(0, 2);
+        //    else
+        //        direction = (Directions)random.Next(0, 4);
+
+        //    if (arrows.Count == 0)
+        //    {
+        //        size = Sizes.big;
+        //        //color = usedColor = (Colors)random.Next(0, 2);
+        //        color = (Colors)random.Next(0, 2);
+        //    }
+        //    else {
+        //        size = Sizes.small;
+        //        if (arrows[0].color == Colors.red)
+        //            color = Colors.blue;
+        //        else
+        //            color = Colors.red;
+        //    }
+
+        //    Arrow arrow = new Arrow(color, direction, size);
+        //    arrows.Add(arrow);
+        //    return arrow;
+        //}
+        public static void resetArrows()
         {
-            Colors color;
-            Directions direction;
-            Sizes size;
-
-            if (this.gameMode == 1)
-                direction = (Directions)random.Next(0, 2);
-            else
-                direction = (Directions)random.Next(0, 4);
-
-            if (!alreadyAnArrow)
-            {
-                size = Sizes.big;
-                color = usedColor = (Colors)random.Next(0, 2);
-            }
-            else {
-                size = Sizes.small;
-                if (usedColor == Colors.red)
-                    color = Colors.blue;
-                else
-                    color = Colors.red;
-            }
-
-            Arrow arrow = new Arrow(color, direction, size);
-            alreadyAnArrow = true;
-            return arrow;
-        }
-        private static void resetArrows()
-        {
-           alreadyAnArrow = false;
+            arrows.Clear();
         }
     }
 }
