@@ -8,9 +8,8 @@ namespace Assets.Classes.Games
     class DeceptiveArrow 
     {
         private static Random random;
-        //private static bool alreadyAnArrow = false;
         public static Player player;
-        //private double points;
+        public static float points;
         public static int gameMode;
         public static List<Arrow> arrows = new List<Arrow>();
         //time?

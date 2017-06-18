@@ -44,6 +44,7 @@ public class arrowClick : MonoBehaviour  {
         wroc.GetComponentInChildren<Text>().text = diffX.ToString() + "\n" + diffY.ToString();
         if (moveIsCorrect(diffX, diffY))
         {
+            DeceptiveArrow.points += 1;
             GameObject[] arrows = GameObject.FindGameObjectsWithTag("arrow");
             foreach(GameObject arrow in arrows)
             {
@@ -68,7 +69,7 @@ public class arrowClick : MonoBehaviour  {
                 return true;
         } else if (DeceptiveArrow.arrows[0].direction == Directions.N)
         {
-            if ((diffY > 0 && DeceptiveArrow.arrows[0].color == Colors.blue) || (diffX < 0 && DeceptiveArrow.arrows[0].color == Colors.red))
+            if ((diffY > 0 && DeceptiveArrow.arrows[0].color == Colors.blue) || (diffY < 0 && DeceptiveArrow.arrows[0].color == Colors.red))
                 return true;
         } else
         {
