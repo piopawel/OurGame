@@ -17,17 +17,18 @@ public class GetScore : MonoBehaviour {
     void Start () {
         List<string> scores;
         DatabaseConnector dbconn = new DatabaseConnector();
-        scores = dbconn.loadScores("PIO", "DeceptiveArrow");
+        string game = label0.tag;
+        scores = dbconn.loadScores("PIO", game);
         if (scores.Count > 0)
-            label0.GetComponentInChildren<Text>().text = scores[0];
+            label0.GetComponentInChildren<TextMesh>().text = "1.  " + scores[0];
         if (scores.Count > 1)
-            label1.GetComponentInChildren<Text>().text = scores[1];
+            label1.GetComponentInChildren<TextMesh>().text = "2.  " + scores[1];
         if (scores.Count > 2)
-            label2.GetComponentInChildren<Text>().text = scores[2];
+            label2.GetComponentInChildren<TextMesh>().text = "3.  " + scores[2];
         if (scores.Count > 3)
-            label3.GetComponentInChildren<Text>().text = scores[3];
+            label3.GetComponentInChildren<TextMesh>().text = "4.  " + scores[3];
         if (scores.Count > 4)
-            label4.GetComponentInChildren<Text>().text = scores[4];
+            label4.GetComponentInChildren<TextMesh>().text = "5.  " + scores[4];
 
     }
 	
