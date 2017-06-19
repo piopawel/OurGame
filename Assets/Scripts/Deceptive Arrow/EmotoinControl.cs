@@ -48,7 +48,7 @@ public class EmotoinControl : MonoBehaviour
 
             sum = sqDiffX + sqDiffY + sqDiffZ;
 
-            if (sum < -1)
+            if (sum < 4)
             {
                 change--;
             }
@@ -65,12 +65,14 @@ public class EmotoinControl : MonoBehaviour
 
             if (change < -10)
             {
+                change = 0;
                 mood = 1;
                 if (DeceptiveArrow.gameMode > 1)
                     DeceptiveArrow.gameMode--;
             }
             else if (change > 10)
             {
+                change = 0;
                 mood = 3;
                 if (DeceptiveArrow.gameMode < 5)
                     DeceptiveArrow.gameMode++;
