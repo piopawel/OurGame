@@ -45,7 +45,8 @@ public class ArrowCreation : MonoBehaviour {
         else
             chosenPrefab = redArrowPrefab;
 
-        GameObject arrow = Instantiate(chosenPrefab, new Vector3(0, 1.5f, 1), direction);
+        GameObject arrow = Instantiate(chosenPrefab, new Vector3(0, 1.5f, 2), direction);
+
         arrow.tag = "arrow";
 
         if (DeceptiveArrow.gameMode == 3)

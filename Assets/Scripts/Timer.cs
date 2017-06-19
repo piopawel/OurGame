@@ -10,7 +10,9 @@ public class Timer : MonoBehaviour
 {
 
     public GameObject timeLabel;
-    float timeLeft = 30;
+    public GameObject showButton;
+
+    float timeLeft = 5;
     // Use this for initialization
     void Start()
     {
@@ -29,16 +31,24 @@ public class Timer : MonoBehaviour
             if (timeLeft < 0)
             {
                 ChangeScene changeScene = new ChangeScene();
-                changeScene.ChangeSceneTo(3);
-                DatabaseConnector dbconn = new DatabaseConnector();
-                if(game == "DeceptiveArrow")
-                    dbconn.saveScore(DeceptiveArrow.player ,DeceptiveArrow.points, game);
-                else if (game == "Equations")
-                    dbconn.saveScore(Equations.player, Equations.points, game);
-                else if (game == "MatchIt")
-                    dbconn.saveScore(MatchIt.player, MatchIt.points, game);
-
                 
+                showButton.SetActive(true);
+                if (game == "DeceptiveArrow")
+                    showButton.GetComponentInChildren<TextMesh>().text = "Twój wynik " + DeceptiveArrow.points;
+                else if (game == "Equations")
+                    showButton.GetComponentInChildren<TextMesh>().text = "Twój wynik " + Equations.points;
+                else if (game == "MatchIt")
+                    showButton.GetComponentInChildren<TextMesh>().text = "Twój wynik " + MatchIt.points;
+                if (timeLeft < -5) { 
+                    changeScene.ChangeSceneTo(3);
+                    DatabaseConnector dbconn = new DatabaseConnector();
+                    if (game == "DeceptiveArrow")
+                        dbconn.saveScore(DeceptiveArrow.player, DeceptiveArrow.points, game);
+                    else if (game == "Equations")
+                        dbconn.saveScore(Equations.player, Equations.points, game);
+                    else if (game == "MatchIt")
+                        dbconn.saveScore(MatchIt.player, MatchIt.points, game);
+                }
                 
             }
         }
