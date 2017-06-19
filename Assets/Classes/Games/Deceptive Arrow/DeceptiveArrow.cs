@@ -9,7 +9,7 @@ namespace Assets.Classes.Games
     {
         public static string player = "PIO";
         public static float points;
-        public static int gameMode = 2;
+        public static int gameMode = 5;
         public static List<Arrow> arrows = new List<Arrow>();
 
         public static void resetArrows()
