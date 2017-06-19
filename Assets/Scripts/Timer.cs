@@ -14,7 +14,9 @@ public class Timer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        DeceptiveArrow.points = 0;
+        Equations.points = 0;
+        MatchIt.points = 0;
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class Timer : MonoBehaviour
                     dbconn.saveScore(MatchIt.player, MatchIt.points, game);
 
                 ChangeScene changeScene = new ChangeScene();
-                changeScene.ChangeSceneTo(2);
+                changeScene.ChangeSceneTo(3);
             }
         }
     }

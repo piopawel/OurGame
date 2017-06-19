@@ -99,7 +99,7 @@ public class registerButtonService : MonoBehaviour {
 	void Update () {
         if (userIsCreated) {
             ChangeScene changeScene = new ChangeScene();
-            changeScene.ChangeSceneTo(1);
+            changeScene.ChangeSceneTo(3);
         }
     }
 }
