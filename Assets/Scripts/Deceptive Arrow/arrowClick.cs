@@ -49,6 +49,10 @@ public class arrowClick : MonoBehaviour  {
                 bonus = 0.9f;
             else if (DeceptiveArrow.gameMode == 3)
                 bonus = 1.1f;
+            else if (DeceptiveArrow.gameMode == 4)
+                bonus = 1.2f;
+            else if (DeceptiveArrow.gameMode == 5)
+                bonus = 1.25f;
             else
                 bonus = 1;
 

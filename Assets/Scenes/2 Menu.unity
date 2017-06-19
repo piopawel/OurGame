@@ -853,7 +853,7 @@ RectTransform:
   m_Children:
   - {fileID: 156736267}
   m_Father: {fileID: 999703415}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1045,8 +1045,8 @@ RectTransform:
   m_Children:
   - {fileID: 633018520}
   - {fileID: 1771417859}
-  - {fileID: 1863830649}
   - {fileID: 844581908}
+  - {fileID: 1863830649}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1146,6 +1146,7 @@ GameObject:
   - component: {fileID: 1035367391}
   - component: {fileID: 1035367390}
   - component: {fileID: 1035367389}
+  - component: {fileID: 1035367392}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1210,7 +1211,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1035367390}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1035367392}
+        m_MethodName: ChangeSceneTo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1035367390
@@ -1246,6 +1258,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035367387}
+--- !u!114 &1035367392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1035367387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f77394234c2065468b23c010524a1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1121448026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,6 +1968,7 @@ GameObject:
   - component: {fileID: 1863830652}
   - component: {fileID: 1863830651}
   - component: {fileID: 1863830650}
+  - component: {fileID: 1863830653}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1964,7 +1988,7 @@ RectTransform:
   m_Children:
   - {fileID: 2006411661}
   m_Father: {fileID: 999703415}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2009,7 +2033,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1863830651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1863830653}
+        m_MethodName: ChangeSceneTo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1863830651
@@ -2045,6 +2080,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1863830648}
+--- !u!114 &1863830653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863830648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f77394234c2065468b23c010524a1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2006411660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2101,7 @@ GameObject:
   - component: {fileID: 2006411661}
   - component: {fileID: 2006411663}
   - component: {fileID: 2006411662}
+  - component: {fileID: 2006411664}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2112,13 +2159,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Od ty\u0142u"
+  m_Text: Najlepsze wyniki
 --- !u!222 &2006411663
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2006411660}
+--- !u!114 &2006411664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2006411660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f77394234c2065468b23c010524a1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2055696444
 GameObject:
   m_ObjectHideFlags: 0

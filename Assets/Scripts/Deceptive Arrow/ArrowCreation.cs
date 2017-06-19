@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ArrowCreation : MonoBehaviour {
     public GameObject blueArrowPrefab;
     public GameObject redArrowPrefab;
+    public GameObject gamePanel;
     //DeceptiveArrow deceptiveArrow;
     private static System.Random random;
 
@@ -25,6 +26,7 @@ public class ArrowCreation : MonoBehaviour {
         Arrow generatedArrow = generateArrow();
         blueArrowPrefab = Resources.Load("blueArrow") as GameObject;
         redArrowPrefab = Resources.Load("redArrow") as GameObject;
+        gamePanel = GameObject.FindGameObjectWithTag("touchPanel");
         Quaternion direction;
         GameObject chosenPrefab;
 
@@ -45,6 +47,20 @@ public class ArrowCreation : MonoBehaviour {
 
         GameObject arrow = Instantiate(chosenPrefab, new Vector3(0, 1.5f, 1), direction);
         arrow.tag = "arrow";
+
+        if (DeceptiveArrow.gameMode == 3)
+        {
+            arrow.transform.localScale = new Vector3(0.20f, 0.20f, 1);
+            gamePanel.transform.localScale = new Vector3(0.00025f, 0.00013f, 1);
+        }
+        if (DeceptiveArrow.gameMode == 4) { 
+            arrow.transform.localScale = new Vector3(0.15f, 0.15f, 1);
+            gamePanel.transform.localScale = new Vector3(0.00020f, 0.00010f, 1);
+        }
+        if (DeceptiveArrow.gameMode == 5){
+            arrow.transform.localScale = new Vector3(0.10f, 0.10f, 1);
+            gamePanel.transform.localScale = new Vector3(0.00015f, 0.00008f, 1);
+        }
 
         if (generatedArrow.size == Sizes.small)
             arrow.transform.localScale = new Vector3(0.05f, 0.05f, 1);

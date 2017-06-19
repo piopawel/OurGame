@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
                     dbconn.saveScore(MatchIt.player, MatchIt.points, game);
 
                 ChangeScene changeScene = new ChangeScene();
-                changeScene.ChangeSceneTo(2);
+                changeScene.ChangeSceneTo(3);
             }
         }
     }

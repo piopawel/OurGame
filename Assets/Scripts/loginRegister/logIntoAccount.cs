@@ -33,7 +33,7 @@ public class logIntoAccount : MonoBehaviour {
 
             
             ChangeScene changeScene = new ChangeScene();
-            changeScene.ChangeSceneTo(2);
+            changeScene.ChangeSceneTo(3);
             
         }
     }
