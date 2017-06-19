@@ -14,7 +14,24 @@ public class Game1 : MonoBehaviour
     static string sign;
     static float answer;
     List<string> signs = new List<string>{ "/", "+", "-", "*" };
+    static int levelBasedOnMood = 10;
 
+    static float oldX;
+    static float oldY;
+    static float oldZ;
+
+    static float sqDiffX;
+    static float sqDiffY;
+    static float sqDiffZ;
+
+    static float diffX = 0;
+    static float diffY = 0;
+    static float diffZ = 0;
+
+    double timeLeft = 0.5;
+    double sum;
+    int change = 0;
+    public static int mood = 2;
 
     // Use this for initialization
     void Start()
@@ -28,11 +45,64 @@ public class Game1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeLeft -= Time.deltaTime;
+        if (timeLeft < 0)
+        {
+            diffX = 10 * (oldX - Input.acceleration.x);
+            diffY = 10 * (oldY - Input.acceleration.y);
+            diffZ = 10 * (oldZ - Input.acceleration.z);
+            sqDiffX = diffX * diffX;
+            sqDiffY = diffY * diffY;
+            sqDiffZ = diffZ * diffZ;
+
+            sum = sqDiffX + sqDiffY + sqDiffZ;
+
+            if (sum < 4)
+            {
+                change--;
+            }
+            else if (sum > 20)
+            {
+                change++;
+            }
+
+            oldX = Input.acceleration.x;
+            oldY = Input.acceleration.y;
+            oldZ = Input.acceleration.z;
+            timeLeft = 0.5;
+
+            if (change < -10)
+            {
+                mood = 3;
+            }
+            else if (change > 10)
+            {
+                mood = 1;
+            }
+
+            else mood = 2;
+        }
 
     }
 
+
     public void checkGame(string checkedSign)
     {
+        switch (mood)
+        {
+            case 1:
+
+                if (levelBasedOnMood > 8)
+                    levelBasedOnMood = levelBasedOnMood - 2;
+
+                break;
+            case 3:
+
+                levelBasedOnMood = levelBasedOnMood + 2;
+
+                break;
+
+        }
 
 
         switch (checkedSign)

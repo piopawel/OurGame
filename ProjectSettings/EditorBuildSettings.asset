@@ -29,12 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/7 Scores.unity
     guid: 4ef43ed23ef452b409bc9665b7beb8cc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/6 Game4.unity
     guid: 6c33636379c756849afb6ff6ea81f3f3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 07b21030bd3fbff498989fbbd0c9ebfd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/sxax.unity
     guid: 7936f465885de1e4f828e6d531fc7cc7
