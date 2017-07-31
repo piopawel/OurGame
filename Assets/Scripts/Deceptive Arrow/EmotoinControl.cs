@@ -66,41 +66,62 @@ public class EmotoinControl : MonoBehaviour
             if (change < -10)
             {
                 change = 0;
-                mood = 1;
+                //mood = 1;
                 if (DeceptiveArrow.gameMode > 1)
                     DeceptiveArrow.gameMode--;
             }
             else if (change > 10)
             {
                 change = 0;
-                mood = 3;
+                //mood = 3;
                 if (DeceptiveArrow.gameMode < 5)
                     DeceptiveArrow.gameMode++;
             }
-            else mood = 2;
+            //else mood = 2;
         }
-
-    }
-
-    public int checkMood()
-    {
-        if (change < -10)
+        if (DeceptiveArrow.goodMoves >= 3)
         {
-            mood = 3;
-            if (DeceptiveArrow.gameMode < 5 )
+            if (DeceptiveArrow.gameMode < 5)
+            {
                 DeceptiveArrow.gameMode++;
+                DeceptiveArrow.goodMoves = 0;
+            }
         }
-        else if (change > 10)
+        if (DeceptiveArrow.goodMoves <= -3)
         {
-            mood = 1;
-            if(DeceptiveArrow.gameMode>1)
+            if (DeceptiveArrow.gameMode > 1)
+            {
                 DeceptiveArrow.gameMode--;
+                DeceptiveArrow.goodMoves = 0;
 
+                arrowClick AC = new arrowClick();
+                AC.destroyArrow();
+                ArrowCreation arrowCreation = new ArrowCreation();
+                arrowCreation.createArrow();
+            }
         }
-        else mood = 2;
 
-        return mood;
     }
+
+    //public int checkMood()
+    //{
+    //    if (change < -10)
+    //    {
+    //        mood = 3;
+    //        if (DeceptiveArrow.gameMode < 5 )
+    //            DeceptiveArrow.gameMode++;
+    //    }
+    //    else if (change > 10)
+    //    {
+    //        mood = 1;
+    //        if(DeceptiveArrow.gameMode>1)
+    //            DeceptiveArrow.gameMode--;
+
+    //    }
+    //    else mood = 2;
+
+    //    return mood;
+    //}
 
 
 }

@@ -57,17 +57,25 @@ public class arrowClick : MonoBehaviour  {
                 bonus = 1;
 
             DeceptiveArrow.points += bonus;
-            GameObject[] arrows = GameObject.FindGameObjectsWithTag("arrow");
-            foreach(GameObject arrow in arrows)
-            {
-                Destroy(arrow);
-            }
-            DeceptiveArrow.resetArrows();
+            DeceptiveArrow.goodMoves++;
+            destroyArrow();
             ArrowCreation arrowCreation = new ArrowCreation();
             arrowCreation.createArrow();
+        } else
+        {
+            DeceptiveArrow.goodMoves--;
         }
     }
     
+    public void destroyArrow()
+    {
+        GameObject[] arrows = GameObject.FindGameObjectsWithTag("arrow");
+        foreach (GameObject arrow in arrows)
+        {
+            Destroy(arrow);
+        }
+        DeceptiveArrow.resetArrows();
+    }
 
     private bool moveIsCorrect(float diffX, float diffY)
     {
