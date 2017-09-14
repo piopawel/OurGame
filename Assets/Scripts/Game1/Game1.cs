@@ -9,6 +9,8 @@ public class Game1 : MonoBehaviour
     public TextMesh questionDisplay1;
     public TextMesh questionDisplay2;
     public TextMesh answerDisplay;
+    public TextMesh suma = new TextMesh();
+    public TextMesh Check = new TextMesh();
     static int variableA;
     static int variableB;
     static string sign;
@@ -30,8 +32,9 @@ public class Game1 : MonoBehaviour
 
     double timeLeft = 0.5;
     double sum;
-    int change = 0;
+    static int change = 0;
     public static int mood = 2;
+    public static int wronganswear = 0;
 
     // Use this for initialization
     void Start()
@@ -57,29 +60,41 @@ public class Game1 : MonoBehaviour
 
             sum = sqDiffX + sqDiffY + sqDiffZ;
 
-            if (sum < 4)
+            if (sum < 2)
             {
                 change--;
             }
-            else if (sum > 20)
+            else if (sum > 4)
             {
-                change++;
+                change = change + 2;
             }
+            if (wronganswear > 0)
+            {
+                change += 5* wronganswear;
+                wronganswear = 0;
+            }
+
+            Debug.Log("sum" + sum);
+            Debug.Log("CHANGE" + change);
+            suma.text = "level" + levelBasedOnMood.ToString();
+            Check.text = "change" + change.ToString();
+
 
             oldX = Input.acceleration.x;
             oldY = Input.acceleration.y;
             oldZ = Input.acceleration.z;
-            timeLeft = 0.5;
+            timeLeft = 0.3;
 
-            if (change < -10)
+            if (change < -5)
             {
                 mood = 3;
             }
-            else if (change > 10)
+            else if (change > 3)
             {
                 mood = 1;
             }
 
+            
             else mood = 2;
         }
 
@@ -88,6 +103,7 @@ public class Game1 : MonoBehaviour
 
     public void checkGame(string checkedSign)
     {
+        change = 0;
         switch (mood)
         {
             case 1:
@@ -113,8 +129,13 @@ public class Game1 : MonoBehaviour
                 {
                     Debug.Log(answer + " == " + variableA + " + " + variableB);
                     Equations.points += 1;
-                    nextQuestion(10);
-                };
+                    nextQuestion(levelBasedOnMood);
+                }
+                     else
+            {
+                wronganswear++;
+                Debug.Log("zleeee");
+            };
                 break;
             case "-":
                 Debug.Log(answer + " == " + variableA + " - " + variableB);
@@ -122,8 +143,12 @@ public class Game1 : MonoBehaviour
                 {
                     Debug.Log(answer + " == " + variableA + " - " + variableB);
                     Equations.points += 1;
-                    nextQuestion(10);
-                };
+                    nextQuestion(levelBasedOnMood);
+                }          else
+            {
+                wronganswear++;
+                Debug.Log("zleeee");
+            };
                 break;
             case "/":
                 Debug.Log(answer + " == " + variableA + " / " + variableB);
@@ -131,8 +156,12 @@ public class Game1 : MonoBehaviour
                 {
                     Debug.Log(answer + " == " + variableA + " / " + variableB);
                     Equations.points += 1;
-                    nextQuestion(10);
-                };
+                    nextQuestion(levelBasedOnMood);
+                }          else
+            {
+                wronganswear++;
+                Debug.Log("zleeee");
+            };
                 break;
             case "*":
 
@@ -141,8 +170,12 @@ public class Game1 : MonoBehaviour
                 {
                     Debug.Log(answer + " == " + variableA + " * " + variableB);
                     Equations.points += 1;
-                    nextQuestion(10);
-                };
+                    nextQuestion(levelBasedOnMood);
+                }          else
+            {
+                wronganswear++;
+                Debug.Log("zleeee");
+            };
                 break;
 
             default:

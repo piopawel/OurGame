@@ -177,6 +177,7 @@
      <Compile Include="Assets\Scripts\Game2\Game2.cs" />
      <Compile Include="Assets\Scripts\Game2\MIPointDisplay.cs" />
      <Compile Include="Assets\Scripts\GetScore.cs" />
+     <Compile Include="Assets\Scripts\ShowPoints.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\acc1.cs" />
      <Compile Include="Assets\Scripts\loginRegister\getUsernames.cs" />

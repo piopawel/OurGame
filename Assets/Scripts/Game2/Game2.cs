@@ -23,6 +23,8 @@ public class Game2 : MonoBehaviour
     public TextMesh Display10 = new TextMesh();
     public TextMesh Display11 = new TextMesh();
     public TextMesh Display12 = new TextMesh();
+    public TextMesh suma = new TextMesh();
+    public TextMesh Check = new TextMesh();
     List<TextMesh> displays = new List<TextMesh>();
     static List<TextMesh> pairs = new List<TextMesh>();
     static int levelBasedOnMood = 4;
@@ -39,11 +41,11 @@ public class Game2 : MonoBehaviour
     static float diffY = 0;
     static float diffZ = 0;
 
-    double timeLeft = 0.5;
+    double timeLeft = 0.2;
     double sum;
-    int change = 0;
+    public static int change = 0;
     public static int mood = 2;
-
+    public static int wronganswear = 0;
 
     // Use this for initialization
     void Start()
@@ -70,25 +72,36 @@ public class Game2 : MonoBehaviour
 
             sum = sqDiffX + sqDiffY + sqDiffZ;
 
-            if (sum < 4)
+            if (sum < 2)
             {
                 change--;
             }
-            else if (sum > 20)
+            else if (sum > 4)
             {
-                change++;
+                change = change + 2;
             }
+            if (wronganswear > 0)
+            {
+                change += 3*wronganswear;
+                wronganswear = 0;
+            }
+
+            Debug.Log("sum" + sum);
+            Debug.Log("CHANGE" + change);
+            suma.text = "sum" + sum.ToString();
+            Check.text = "change" + change.ToString();
+
 
             oldX = Input.acceleration.x;
             oldY = Input.acceleration.y;
             oldZ = Input.acceleration.z;
-            timeLeft = 0.5;
+            timeLeft = 0.2;
 
-            if (change < -10)
+            if (change < -5)
             {
                 mood = 3;
             }
-            else if (change > 10)
+            else if (change > 3)
             {
                 mood = 1;
             }
@@ -100,15 +113,16 @@ public class Game2 : MonoBehaviour
 
     public void displaySings()
     {
-
+        change = 0;
         displays.Clear();
 
         switch (mood)
         {
             case 1:
 
-                if (levelBasedOnMood > 6)
+                if (levelBasedOnMood > 4)
                     levelBasedOnMood = levelBasedOnMood - 2;
+                    
 
                 break;
             case 3:
@@ -116,6 +130,7 @@ public class Game2 : MonoBehaviour
                 if (levelBasedOnMood < 12)
                 {
                     levelBasedOnMood = levelBasedOnMood + 2;
+                    
                 }
                 break;
         }
@@ -214,6 +229,12 @@ public class Game2 : MonoBehaviour
             {
                 Debug.Log("z pary" + pairs[i]);
                 pairs.RemoveAt(i);
+                
+            }
+            else
+            {
+                wronganswear++;
+                Debug.Log("zleeee");
             }
 
         }
